@@ -24,7 +24,7 @@ plotly.graph_objects`
 
 
 
-### #### Connecting to Snowflake
+#### Connecting to Snowflake
 
 The script uses SQLAlchemy and Snowflake libraries to connect to a Snowflake database. The connection details are fetched from environment variables ('snowflake_conn').
 
