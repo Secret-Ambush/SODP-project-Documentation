@@ -1,0 +1,545 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Interface%20Building/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>Classification Model - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#classification-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Classification Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Hello there 😀
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Classification Model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Classification Model
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-handling-data-set-preparing-and-preprocessing" class="md-nav__link">
+    Section 1: Handling Data Set – Preparing and Preprocessing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-model-selection-and-evaluation" class="md-nav__link">
+    Section 2: Model Selection and Evaluation
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: Model Selection and Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#random-forest-classifier" class="md-nav__link">
+    Random Forest Classifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyperparameter-tuning" class="md-nav__link">
+    Hyperparameter Tuning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploring-other-models" class="md-nav__link">
+    Exploring Other Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-creation-process" class="md-nav__link">
+    Model Creation Process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interface%20Building/" class="md-nav__link">
+        Interface Building
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Regression%20Models%20and%20Visualization/" class="md-nav__link">
+        Regression Models and Visualization
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-handling-data-set-preparing-and-preprocessing" class="md-nav__link">
+    Section 1: Handling Data Set – Preparing and Preprocessing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-model-selection-and-evaluation" class="md-nav__link">
+    Section 2: Model Selection and Evaluation
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: Model Selection and Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#random-forest-classifier" class="md-nav__link">
+    Random Forest Classifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyperparameter-tuning" class="md-nav__link">
+    Hyperparameter Tuning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploring-other-models" class="md-nav__link">
+    Exploring Other Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-creation-process" class="md-nav__link">
+    Model Creation Process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="classification-model">Classification Model</h1>
+<h2 id="section-1-handling-data-set-preparing-and-preprocessing">Section 1: Handling Data Set – Preparing and Preprocessing</h2>
+<p>In this project, I had the opportunity to work with an extensive dataset comprising an impressive 500 million rows, which far surpassed any dataset I had handled before. To provide a perspective, the most recognizable Titanic dataset consists of approximately 1000 records, emphasizing the scale of the data I managed.</p>
+<p>For training the predictive models, I utilized historical flight data spanning the years 2017-2018, and to evaluate their performance, I employed the data from the year 2019. This division into training and testing datasets allowed me to ensure the robustness and accuracy of the models in real-world scenarios.</p>
+<p>Handling such a vast amount of data was an exciting challenge, and it provided valuable insights into the complexities and nuances of the airline industry's demand patterns. As an intern, I was given an 'x-small' workspace on the cloud data platform 'Snowflake', my line manager tried to up my permissions, but to no avail.</p>
+<p>I attempted to migrate the entire dataset to PostgreSQL, leaving my laptop overnight at the office for the task, but 500 million rows proved to be too much for PostgreSQL to handle.</p>
+<p>Eventually, I resorted to using Snowflake programmatically, extracting data at the flight level. Even then, it was a large amount of data, so I had to perform manipulations on the dataframe level.</p>
+<p>I carefully extracted relevant features from the dataset and encoded the target variable to represent distinct classes. I recognized that group attributes are particularly important, as their booking and cancellations reflect heavily. I merged the individual and group bookings into one. This way, revenue could be correctly reflected. I performed other pre-processing tasks like standard scaling, frequency encoding, and removing null values.</p>
+<h2 id="section-2-model-selection-and-evaluation">Section 2: Model Selection and Evaluation</h2>
+<p>The first model I worked on aimed to classify whether the flight sells out 30 days prior to departure, which is not desirable for airline companies who sell perishable tickets.</p>
+<p>I began by selecting a single Flight 0784 LOS-DXB, which had a reasonable amount of data (around 500 thousand records). I performed model selection on this test flight before implementing the process for all 1024 flights.</p>
+<h3 id="random-forest-classifier">Random Forest Classifier</h3>
+<p>First, I tried the Random Forest Classifier. I trained the model on the training data and then predicted the labels for the testing data. The results were promising.</p>
+<p>To better visualize the model's performance, I utilized a confusion matrix to display the number of true positives, true negatives, false positives, and false negatives.</p>
+<h3 id="hyperparameter-tuning">Hyperparameter Tuning</h3>
+<p>To optimize the Random Forest Classifier further, I conducted hyperparameter tuning using GridSearchCV and RandomizedSearchCV. GridSearchCV involved exploring various combinations of hyperparameters, such as <code>n_estimators</code>, <code>max_features</code>, <code>max_depth</code>, and <code>max_leaf_nodes</code>, to find the optimal configuration. After identifying the best hyperparameters, I refitted the model and reevaluated its performance, resulting in improved accuracy and an ROC AUC score.</p>
+<p>Taking a different approach, I employed RandomizedSearchCV for hyperparameter tuning. This technique allowed me to randomly sample hyperparameter values from a predefined parameter grid. After evaluating the model with these randomly selected hyperparameters, I determined the best combination and refitted the model.</p>
+<h3 id="exploring-other-models">Exploring Other Models</h3>
+<p>I also tested a variety of other models, including XGBoost Classifier, Gaussian Naive Bayes, Decision Tree Classifier, and SVM, with a linear kernel. Each model was trained on the training data, and their respective label predictions were made for the testing data.</p>
+<p>After thorough evaluation, I found XGBoost Classifier to be the best performing model. I performed additional hyperparameter tuning to find the best parameters to apply to my classifier.</p>
+<h3 id="model-creation-process">Model Creation Process</h3>
+<p>I followed the below steps to create models for each flight:</p>
+<ol>
+<li>
+<p>Import the necessary libraries, including pandas, create_engine from sqlalchemy, tqdm for progress tracking, gc for garbage collection, and relevant functions from scikit-learn for evaluation.</p>
+</li>
+<li>
+<p>Establish a connection to the SQL database using the create_engine function from sqlalchemy.</p>
+</li>
+<li>
+<p>Define an SQL query to retrieve distinct flight numbers (fltnum) from the database, sorted in descending order.</p>
+</li>
+<li>
+<p>Set the chunksize, which determines the number of rows to be processed at a time. This helps handle large datasets efficiently.</p>
+</li>
+<li>
+<p>Calculate the total number of rows and chunks to be processed.</p>
+</li>
+<li>
+<p>Initialize a progress bar using tqdm to keep track of the processing progress.</p>
+</li>
+<li>
+<p>Iterate through the chunks obtained from the SQL query and perform the following steps for each chunk:</p>
+</li>
+<li>
+<p>Retrieve data for the specific flight from the database.</p>
+</li>
+<li>Preprocess the data, filling NaN values, and calculating a new feature 'sodp' (Sold-out Days-Prior).</li>
+<li>Determine whether the flight is consistently fully booked, never fully booked, or requires class balancing due to imbalanced data.</li>
+<li>If the flight requires class balancing, perform oversampling using the <code>resample</code> function to address the imbalance.</li>
+<li>Encode categorical features using frequency encoding for modeling purposes.</li>
+<li>Split the data into training and testing sets based on the snapshot date (time-based splitting).</li>
+<li>Build an XGBoost classifier model and fit it to the training data.</li>
+<li>Predict the labels for the test data and evaluate the model's performance using ROC AUC score and accuracy metrics.</li>
+</ol>
+<p>Overall, the XGBoost Classifier demonstrated superior performance in classifying flight sell-outs, and the data preprocessing steps played a crucial role in ensuring accurate predictions.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Hello there 😀" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Hello there 😀
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Interface%20Building/" class="md-footer__link md-footer__link--next" aria-label="Next: Interface Building" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Interface Building
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Riddhi Goswami
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
